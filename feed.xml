@@ -3,7 +3,7 @@
     <title>volecho.com</title>
     <link href="https://volecho.com/feed.xml" rel="self" />
     <link href="https://volecho.com" />
-    <updated>2025-09-16T22:03:29+03:00</updated>
+    <updated>2025-09-16T22:05:42+03:00</updated>
     <author>
         <name>Volecho.com</name>
     </author>
@@ -17,18 +17,19 @@
         <link href="https://volecho.com/magazine/"/>
         <id>https://volecho.com/magazine/</id>
 
-        <updated>2025-09-16T22:03:20+03:00</updated>
+        <updated>2025-09-16T22:05:42+03:00</updated>
             <summary>
                 <![CDATA[
-                    The following feature is now included in our online magazine which is&hellip;
+                    Our mission is to provide a platform that amplifies the voices of&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p class="align-center">The following feature is now included in our online magazine which is also available in print.</p>
+                <p class="align-center">Our mission is to provide a platform that amplifies the voices of independent and underground artists, showcasing their groundbreaking releases that might not get the spotlight they truly deserve. In the vast landscape of music, we strive to be the bridge between passionate listeners and the undiscovered brilliance of the underground.</p>
+<p class="align-center"><strong>Issue #2</strong></p>
 <address class="align-center"><strong><a href="https://online.pubhtml5.com/jgwlo/bzyq/" target="_blank" rel="noopener noreferrer">Online Magazine</a> | <a href="https://www.peecho.com/print/en/1983467" target="_blank" rel="noopener noreferrer">Print Magazine</a></strong></address><address> </address><address class="align-center">
 <div class="peecho-preview-button" title="Peecho" data-publication="1983467" data-filetype="pdf" data-new-window="true" data-text="ORDER PRINT 19.99 EUR" data-noprice="true" data-currency="EUR" data-locale="en_EN">Print</div>
-<strong>
+<p class="align-center"><strong>
 <script type="text/javascript">
 (function() {
 var p=document.createElement("script");p.type="text/javascript";p.async=true;
@@ -37,7 +38,8 @@ p.src=h+"d3aln0nj58oevo.cloudfront.net/button/preview/175761626190865620.js";
 var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(p,s);
 }).call(this);
 </script>
-<br><br>For more details contact us at: <a href="mailto:volechomag@gmail.com" target="_blank" rel="noopener noreferrer">volechomag@gmail.com</a></strong></address>
+<br><br>For more details contact us at: <a href="mailto:volechomag@gmail.com" target="_blank" rel="noopener noreferrer">volechomag@gmail.com</a></strong></p>
+</address>
             ]]>
         </content>
     </entry>
