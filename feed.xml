@@ -3,7 +3,7 @@
     <title>volecho.com</title>
     <link href="https://volecho.com/feed.xml" rel="self" />
     <link href="https://volecho.com" />
-    <updated>2026-01-20T00:33:43+02:00</updated>
+    <updated>2026-01-21T22:41:19+02:00</updated>
     <author>
         <name>Volecho.com</name>
     </author>
@@ -42,8 +42,9 @@
         </author>
         <link href="https://volecho.com/quiet-rooms-and-open-hearts-barry-allen-and-the-weight-of-perhaps/"/>
         <id>https://volecho.com/quiet-rooms-and-open-hearts-barry-allen-and-the-weight-of-perhaps/</id>
+            <category term="Articles"/>
 
-        <updated>2026-01-19T11:42:40+02:00</updated>
+        <updated>2026-01-21T22:41:13+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://volecho.com/media/posts/127/volecho-music-magazine-7.jpg" alt="" />
@@ -77,8 +78,9 @@
         </author>
         <link href="https://volecho.com/gregg-mckella-space-folk-storytelling-from-the-underground/"/>
         <id>https://volecho.com/gregg-mckella-space-folk-storytelling-from-the-underground/</id>
+            <category term="Articles"/>
 
-        <updated>2026-01-19T00:31:51+02:00</updated>
+        <updated>2026-01-21T22:41:19+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://volecho.com/media/posts/126/volecho-music-magazine-55.jpg" alt="" />
