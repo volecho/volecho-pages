@@ -38,12 +38,6 @@
 <loc>https://volecho.com/page/12/</loc>
 </url>
 <url>
-<loc>https://volecho.com/page/13/</loc>
-</url>
-<url>
-<loc>https://volecho.com/page/14/</loc>
-</url>
-<url>
 <loc>https://volecho.com/about-us/</loc>
 <lastmod>2026-01-22T00:07:36+02:00</lastmod>
 </url>
@@ -1058,5 +1052,13 @@
 <url>
 <loc>https://volecho.com/grey-and-purple-songbook-and-the-price-tag-on-freedom/</loc>
 <lastmod>2026-02-02T22:33:11+02:00</lastmod>
+</url>
+<url>
+<loc>https://volecho.com/top-releases-2-2-26/</loc>
+<lastmod>2026-02-02T22:56:48+02:00</lastmod>
+<image:image>
+<image:loc>https://volecho.com/media\posts\137/Top-Tracks-2xl.jpg</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
 </url>
 </urlset>
