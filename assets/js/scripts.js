@@ -1,37 +1,36 @@
 // Sticky menu
-let newScrollPosition = 0;
-let lastScrollPosition;
-const header = document.getElementById("js-header");
-const stickyMenu = document.getElementById("js-navbar-menu");
+var new_scroll_position = 0;
+var last_scroll_position;
+var header = document.getElementById("js-header");
+var stickyMenu = document.getElementById("js-navbar-menu");
 
-window.addEventListener('scroll', () => {
-    lastScrollPosition = window.scrollY;
+window.addEventListener('scroll', function (e) {
+	last_scroll_position = window.scrollY;
 
-    // Scrolling down
-    if (newScrollPosition < lastScrollPosition && lastScrollPosition > 90) {
-        header.classList.remove("is-visible");
-        header.classList.add("is-hidden");
+	// Scrolling down
+	if (new_scroll_position < last_scroll_position && last_scroll_position > 90) {
+		header.classList.remove("is-visible");
+		header.classList.add("is-hidden");
 
-        // Scrolling up
-    } else if (newScrollPosition > lastScrollPosition && lastScrollPosition > 89) {
-        header.classList.remove("is-hidden");
-        header.classList.add("is-visible");
-        if (stickyMenu) {
-            stickyMenu.classList.add("is-sticky");
-        }
-    }
+		// Scrolling up
+	} else if (new_scroll_position > last_scroll_position && last_scroll_position > 89) {
+		header.classList.remove("is-hidden");
+		header.classList.add("is-visible");
+		if (stickyMenu) {
+			stickyMenu.classList.add("is-sticky");
+		}
+	}
 
-    if (lastScrollPosition < 1) {
-        header.classList.remove("is-visible");
+	if (last_scroll_position < 1) {
+		header.classList.remove("is-visible");
 
-        if (stickyMenu) {
-            stickyMenu.classList.remove("is-sticky");
-        }
-    }
+		if (stickyMenu) {
+			stickyMenu.classList.remove("is-sticky");
+		}
+	}
 
-    newScrollPosition = lastScrollPosition;
+	new_scroll_position = last_scroll_position;
 });
-
 
 // Dropdown menu
 (function (menuConfig) {
@@ -128,10 +127,8 @@ window.addEventListener('scroll', () => {
                     var submenuPotentialPosition = itemPosition + (config.submenuWidth * widthMultiplier);
 
                     if (window.innerWidth < submenuPotentialPosition) {
-                        submenu.classList.remove(config.submenuLeftPositionClass);
                         submenu.classList.add(config.submenuRightPositionClass);
                     } else {
-                        submenu.classList.remove(config.submenuRightPositionClass);
                         submenu.classList.add(config.submenuLeftPositionClass);
                     }
                 } else {
@@ -145,19 +142,16 @@ window.addEventListener('scroll', () => {
                     }
 
                     if (window.innerWidth < submenuPotentialPosition) {
-                        submenu.classList.remove(config.submenuLeftPositionClass);
                         submenu.classList.add(config.submenuRightPositionClass);
                         submenuPosition = -1 * submenu.clientWidth;
-                        submenu.removeAttribute('style');
 
                         if (widthMultiplier === 1) {
                             submenuPosition = 0;
-                            submenu.style.right = submenuPosition + 'px';
-                        } else {
-                            submenu.style.right = this.clientWidth + 'px';
                         }
+
+                        submenu.style.left = submenuPosition + 'px';
+                        submenu.style.right = this.clientWidth + 'px';
                     } else {
-                        submenu.classList.remove(config.submenuRightPositionClass);
                         submenu.classList.add(config.submenuLeftPositionClass);
                         submenuPosition = this.clientWidth;
 
@@ -165,7 +159,6 @@ window.addEventListener('scroll', () => {
                             submenuPosition = 0;
                         }
 
-                        submenu.removeAttribute('style');
                         submenu.style.left = submenuPosition + 'px';
                     }
                 }
@@ -198,8 +191,6 @@ window.addEventListener('scroll', () => {
         if (config.mobileMenuExpandableSubmenus) {
             wrapSubmenusIntoContainer(menuWrapper);
             initToggleSubmenu(menuWrapper);
-        } else {
-            setAriaForSubmenus(menuWrapper);
         }
 
         // Init button events
@@ -257,8 +248,6 @@ window.addEventListener('scroll', () => {
         if (config.mobileMenuExpandableSubmenus) {
             wrapSubmenusIntoContainer(menuWrapper);
             initToggleSubmenu(menuWrapper);
-        } else {
-            setAriaForSubmenus(menuWrapper);
         }
 
         // Menu events
@@ -284,17 +273,6 @@ window.addEventListener('scroll', () => {
             button.setAttribute(config.ariaButtonAttribute, button.classList.contains(config.openedMenuClass));
             document.documentElement.classList.toggle(config.noScrollClass);
         });
-    }
-
-    /**
-     * Set aria-hidden="false" for submenus
-     */
-    function setAriaForSubmenus (menuWrapper) {
-        var submenus = menuWrapper.querySelectorAll(config.submenuSelector);
-
-        for (var i = 0; i < submenus.length; i++) {
-            submenus[i].setAttribute('aria-hidden', false);
-        }
     }
 
     /**
@@ -465,10 +443,10 @@ window.addEventListener('scroll', () => {
 // Share buttons pop-up
 (function () {
     // share popup
-    const shareButton = document.querySelector('.js-content__share-button');
-    const sharePopup = document.querySelector('.js-content__share-popup');
+    let shareButton = document.querySelector('.js-post__share-button');
+    let sharePopup = document.querySelector('.js-post__share-popup');
 
-    if (shareButton && sharePopup) {
+    if (shareButton) {
         sharePopup.addEventListener('click', function (e) {
             e.stopPropagation();
         });
@@ -485,120 +463,68 @@ window.addEventListener('scroll', () => {
     }
 
     // link selector and pop-up window size
-    const Config = {
+    var Config = {
         Link: ".js-share",
         Width: 500,
         Height: 500
     };
-
-    // add handler to links
-    const shareLinks = document.querySelectorAll(Config.Link);
-    shareLinks.forEach(link => {
-        link.addEventListener('click', PopupHandler);
-    });
-
+    // add handler links
+    var slink = document.querySelectorAll(Config.Link);
+    for (var a = 0; a < slink.length; a++) {
+        slink[a].onclick = PopupHandler;
+    }
     // create popup
     function PopupHandler(e) {
-        e.preventDefault();
-
-        const target = e.target.closest(Config.Link);
-        if (!target) return;
-
+        e = (e ? e : window.event);
+        var t = (e.target ? e.target : e.srcElement);
         // hide share popup
         if (sharePopup) {
             sharePopup.classList.remove('is-visible');
         }
-
         // popup position
-        const px = Math.floor((window.innerWidth - Config.Width) / 2);
-        const py = Math.floor((window.innerHeight - Config.Height) / 2);
-
+        var px = Math.floor(((screen.availWidth || 1024) - Config.Width) / 2),
+            py = Math.floor(((screen.availHeight || 700) - Config.Height) / 2);
         // open popup
-        const linkHref = target.href;
-        const popup = window.open(linkHref, "social", `
-            width=${Config.Width},
-            height=${Config.Height},
-            left=${px},
-            top=${py},
-            location=0,
-            menubar=0,
-            toolbar=0,
-            status=0,
-            scrollbars=1,
-            resizable=1
-        `);
-
+        var link_href = t.href ? t.href : t.parentNode.href;
+        var popup = window.open(link_href, "social",
+            "width=" + Config.Width + ",height=" + Config.Height +
+            ",left=" + px + ",top=" + py +
+            ",location=0,menubar=0,toolbar=0,status=0,scrollbars=1,resizable=1");
         if (popup) {
             popup.focus();
+            if (e.preventDefault) e.preventDefault();
+            e.returnValue = false;
         }
+
+        return !!popup;
     }
 })();
 
 // Load search input area
-const searchButton = document.querySelector('.js-search-btn');
-const searchOverlay = document.querySelector('.js-search-overlay');
-const searchInput = document.querySelector('[type="search"]');
+var searchButton = document.querySelector('.js-search-btn');
+    searchOverlay = document.querySelector('.js-search-overlay');
+    searchInput = document.querySelector('.js-search-input');
 
 if (searchButton) {
-    searchButton.addEventListener('click', (e) => {
-        e.stopPropagation();
+    searchButton.addEventListener('click', function () {        
         searchOverlay.classList.toggle('expanded');
-
-        if (searchInput) {
-            setTimeout(() => {
-                if (searchOverlay.classList.contains('expanded')) {
-                    searchInput.focus();
-                }
-            }, 60);
-        }
+       
+        setTimeout(function() {
+            if (searchOverlay.classList.contains('expanded')) {
+                searchInput.focus();
+            }
+        }, 60);        
     });
 
-    searchOverlay.addEventListener('click', (e) => {
+    searchOverlay.addEventListener('click', function (e) {
         e.stopPropagation();
     });
 
-    document.body.addEventListener('click', () => {
+    searchButton.addEventListener('click', function (e) {
+        e.stopPropagation();
+    });
+
+    document.body.addEventListener('click', function () {
         searchOverlay.classList.remove('expanded');
     });
 }
-
-
-// Responsive embeds script
-(function () {
-	let wrappers = document.querySelectorAll('.post__video, .post__iframe');
-
-	for (let i = 0; i < wrappers.length; i++) {
-		let embed = wrappers[i].querySelector('iframe, embed, video, object');
-
-		if (!embed) {
-			continue;
-		}
-
-        if (embed.getAttribute('data-responsive') === 'false') {
-            continue;
-        }
-
-		let w = embed.getAttribute('width');
-		let h = embed.getAttribute('height');
-		let ratio = false;
-
-		if (!w || !h) {
-			continue;
-		}
-		
-		if (w.indexOf('%') > -1 && h.indexOf('%') > -1) { // percentage mode
-			w = parseFloat(w.replace('%', ''));
-			h = parseFloat(h.replace('%', ''));
-			ratio = h / w;
-		} else if (w.indexOf('%') === -1 && h.indexOf('%') === -1) { // pixels mode
-			w = parseInt(w, 10);
-			h = parseInt(h, 10);
-			ratio = h / w;
-		}
-
-		if (ratio !== false) {
-			let ratioValue = (ratio * 100) + '%';
-			wrappers[i].setAttribute('style', '--embed-aspect-ratio:' + ratioValue);
-		}
-	}
-})();
