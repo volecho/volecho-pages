@@ -3,7 +3,7 @@
     <title>volecho.com</title>
     <link href="https://volecho.com/feed.xml" rel="self" />
     <link href="https://volecho.com" />
-    <updated>2026-02-16T23:51:34+02:00</updated>
+    <updated>2026-02-17T00:20:08+02:00</updated>
     <author>
         <name>Volecho.com</name>
     </author>
@@ -163,15 +163,18 @@
         </author>
         <link href="https://volecho.com/grey-and-purple-songbook-and-the-price-tag-on-freedom/"/>
         <id>https://volecho.com/grey-and-purple-songbook-and-the-price-tag-on-freedom/</id>
+        <media:content url="https://volecho.com/media/posts/133/volecho-music-magazine-71.jpg" medium="image" />
 
         <updated>2026-02-16T23:16:50+02:00</updated>
             <summary type="html">
                 <![CDATA[
+                        <img src="https://volecho.com/media/posts/133/volecho-music-magazine-71.jpg" alt="" />
                     The following feature is now included in our online magazine which is&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <p><img src="https://volecho.com/media/posts/133/volecho-music-magazine-71.jpg" class="type:primaryImage" alt="" /></p>
                 <p class="align-center">The following feature is now included in our online magazine which is also available in print.</p>
 <p class="align-center"><strong>Issue #10</strong></p>
 <address class="align-center"><address class="align-center"><strong><a href="https://pubhtml5.com/jgwlo/hrdp/" target="_blank" rel="noopener noreferrer">Online Magazine</a> | <a href="https://www.lulu.com/shop/oddstone-printed-media-group/volecho-issue-11/paperback/product-84wwqpe.html?page=1&amp;pageSize=4" target="_blank" rel="noopener noreferrer">Print Magazine</a></strong></address></address>
