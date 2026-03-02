@@ -38,6 +38,9 @@
 <loc>https://volecho.com/page/12/</loc>
 </url>
 <url>
+<loc>https://volecho.com/page/13/</loc>
+</url>
+<url>
 <loc>https://volecho.com/about-us/</loc>
 <lastmod>2026-01-22T00:07:36+02:00</lastmod>
 </url>
@@ -1102,6 +1105,14 @@
 <lastmod>2026-03-01T13:40:50+02:00</lastmod>
 <image:image>
 <image:loc>https://volecho.com/media/posts/147/volecho-music-magazine-60.jpg</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://volecho.com/elena-deva-unleashes-catharsis-on-abusement-park/</loc>
+<lastmod>2026-03-02T23:42:21+02:00</lastmod>
+<image:image>
+<image:loc>https://volecho.com/media/posts/148/volecho-music-magazine-73.jpg</image:loc>
 <image:title><![CDATA[]]></image:title>
 </image:image>
 </url>
